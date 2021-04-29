@@ -15,5 +15,6 @@ enum NetworkError:Error {
 }
 
 protocol APICall {
+    var numberOfCatFacts:Int { get set }
     func getCatFacts<T:Codable>(url:String, resultType:[T].Type, completion: @escaping (Result<[T], NetworkError>) -> Void)
 }

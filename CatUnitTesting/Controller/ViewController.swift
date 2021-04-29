@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    //Text Label
+    //Text Info Label
     let textLabel:UILabel = {
         let textLabel = UILabel()
         textLabel.font = UIFont(name: "Helvetica", size: 20)
@@ -19,6 +19,15 @@ class ViewController: UIViewController {
         textLabel.textColor = .black
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         return textLabel
+    }()
+    
+    //Text Number Label
+    let numberOfCats:UILabel = {
+        let numberOfCats = UILabel()
+        numberOfCats.font = UIFont.boldSystemFont(ofSize: 20)
+        numberOfCats.textAlignment = .center
+        numberOfCats.translatesAutoresizingMaskIntoConstraints = false
+        return numberOfCats
     }()
     
     //Dependency Inversion
@@ -54,6 +63,8 @@ class ViewController: UIViewController {
                     print(networkError)
                     self.textLabel.text = networkError.localizedDescription
                 }
+                
+                self.numberOfCats.text = "Number of Cat Facts: \(self.networkRequest.numberOfCatFacts)"
             }
         }
         
@@ -65,8 +76,9 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         
         view.addSubview(textLabel)
+        view.addSubview(numberOfCats)
         
-        NSLayoutConstraint.activate([textLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor), textLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor), textLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor), textLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor)])
+        NSLayoutConstraint.activate([textLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor), textLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor), textLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor), textLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor), numberOfCats.bottomAnchor.constraint(equalTo: textLabel.topAnchor), numberOfCats.centerXAnchor.constraint(equalTo: view.centerXAnchor)])
     }
     
     

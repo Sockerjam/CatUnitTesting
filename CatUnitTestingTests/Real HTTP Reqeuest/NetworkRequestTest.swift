@@ -110,5 +110,23 @@ class NetworkRequestTest: XCTestCase {
         }
         self.wait(for: [expectation], timeout: 5)
     }
+    
+    func testNumberOfCats_ShouldReturnTrue(){
+        
+        //given
+        let number = 5
+        let url = "https://cat-fact.herokuapp.com/facts"
+        let expectation = self.expectation(description: "Number of Cats")
+        
+        //when
+        sut.getCatFacts(url: url, resultType: [CatModel].self) { (result) in
+            
+            XCTAssertEqual(self.sut.numberOfCatFacts, number)
+            expectation.fulfill()
+        }
+        
+        self.wait(for: [expectation], timeout: 5)
+        
+    }
 
 }

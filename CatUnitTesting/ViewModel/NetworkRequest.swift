@@ -15,6 +15,8 @@ class NetworkRequest {
     init(urlSession:URLSession = .shared){
         self.urlSession = urlSession
     }
+    
+    private var catsTotal:Int!
 }
 
 extension NetworkRequest:APICall {
@@ -48,11 +50,20 @@ extension NetworkRequest:APICall {
                 completion(.failure(.noData))
                 return
             }
+            self.numberOfCatFacts = successData.count
             completion(.success(successData))
         }
         
         dataTask.resume()
-        
+    }
+    
+    var numberOfCatFacts: Int {
+        get {
+            return catsTotal
+        }
+        set{
+            catsTotal = newValue
+        }
     }
     
     
