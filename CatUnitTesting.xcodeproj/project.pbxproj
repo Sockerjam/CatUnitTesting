@@ -7,23 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9204581D263AAEF300E82F4E /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9204581C263AAEF300E82F4E /* MockURLProtocol.swift */; };
+		92045823263AB0FF00E82F4E /* NetworkRequestWithMockURLSessionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92045822263AB0FF00E82F4E /* NetworkRequestWithMockURLSessionTest.swift */; };
 		920E60D326395CC300581F5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E60D226395CC300581F5D /* AppDelegate.swift */; };
 		920E60D526395CC300581F5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E60D426395CC300581F5D /* SceneDelegate.swift */; };
 		920E60D726395CC300581F5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E60D626395CC300581F5D /* ViewController.swift */; };
-		920E60DA26395CC300581F5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 920E60D826395CC300581F5D /* Main.storyboard */; };
 		920E60DC26395CC400581F5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 920E60DB26395CC400581F5D /* Assets.xcassets */; };
 		920E60DF26395CC400581F5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 920E60DD26395CC400581F5D /* LaunchScreen.storyboard */; };
+		920E60ED26395F4100581F5D /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E60EC26395F4100581F5D /* Protocol.swift */; };
+		920E60F12639600300581F5D /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E60F02639600300581F5D /* NetworkRequest.swift */; };
+		920E60F42639605C00581F5D /* CatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E60F32639605C00581F5D /* CatModel.swift */; };
+		920E610F2639885100581F5D /* NetworkRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E610E2639885100581F5D /* NetworkRequestTest.swift */; };
+		920E61232639A74F00581F5D /* CatModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E61222639A74F00581F5D /* CatModelMock.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		920E61052639880B00581F5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 920E60C726395CC300581F5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 920E60CE26395CC300581F5D;
+			remoteInfo = CatUnitTesting;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		9204581C263AAEF300E82F4E /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		92045822263AB0FF00E82F4E /* NetworkRequestWithMockURLSessionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestWithMockURLSessionTest.swift; sourceTree = "<group>"; };
 		920E60CF26395CC300581F5D /* CatUnitTesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatUnitTesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		920E60D226395CC300581F5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		920E60D426395CC300581F5D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		920E60D626395CC300581F5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		920E60D926395CC300581F5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		920E60DB26395CC400581F5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		920E60DE26395CC400581F5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		920E60E026395CC400581F5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		920E60EC26395F4100581F5D /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		920E60F02639600300581F5D /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		920E60F32639605C00581F5D /* CatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatModel.swift; sourceTree = "<group>"; };
+		920E61002639880B00581F5D /* CatUnitTestingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatUnitTestingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		920E61042639880B00581F5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		920E610E2639885100581F5D /* NetworkRequestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestTest.swift; sourceTree = "<group>"; };
+		920E61222639A74F00581F5D /* CatModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatModelMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,13 +58,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		920E60FD2639880B00581F5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		92045820263AB09800E82F4E /* Real HTTP Reqeuest */ = {
+			isa = PBXGroup;
+			children = (
+				920E610E2639885100581F5D /* NetworkRequestTest.swift */,
+			);
+			path = "Real HTTP Reqeuest";
+			sourceTree = "<group>";
+		};
+		92045821263AB0AF00E82F4E /* Mock URLSession Request */ = {
+			isa = PBXGroup;
+			children = (
+				92045822263AB0FF00E82F4E /* NetworkRequestWithMockURLSessionTest.swift */,
+				9204581C263AAEF300E82F4E /* MockURLProtocol.swift */,
+			);
+			path = "Mock URLSession Request";
+			sourceTree = "<group>";
+		};
 		920E60C626395CC300581F5D = {
 			isa = PBXGroup;
 			children = (
 				920E60D126395CC300581F5D /* CatUnitTesting */,
+				920E61012639880B00581F5D /* CatUnitTestingTests */,
 				920E60D026395CC300581F5D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				920E60CF26395CC300581F5D /* CatUnitTesting.app */,
+				920E61002639880B00581F5D /* CatUnitTestingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,13 +108,58 @@
 			children = (
 				920E60D226395CC300581F5D /* AppDelegate.swift */,
 				920E60D426395CC300581F5D /* SceneDelegate.swift */,
-				920E60D626395CC300581F5D /* ViewController.swift */,
-				920E60D826395CC300581F5D /* Main.storyboard */,
+				920E60EB26395F3100581F5D /* Protocol */,
+				920E60EA26395F2000581F5D /* Model */,
+				920E60E926395F1900581F5D /* ViewModel */,
+				920E60E826395F0F00581F5D /* Controller */,
 				920E60DB26395CC400581F5D /* Assets.xcassets */,
 				920E60DD26395CC400581F5D /* LaunchScreen.storyboard */,
 				920E60E026395CC400581F5D /* Info.plist */,
 			);
 			path = CatUnitTesting;
+			sourceTree = "<group>";
+		};
+		920E60E826395F0F00581F5D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				920E60D626395CC300581F5D /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		920E60E926395F1900581F5D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				920E60F02639600300581F5D /* NetworkRequest.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		920E60EA26395F2000581F5D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				920E60F32639605C00581F5D /* CatModel.swift */,
+				920E61222639A74F00581F5D /* CatModelMock.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		920E60EB26395F3100581F5D /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				920E60EC26395F4100581F5D /* Protocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		920E61012639880B00581F5D /* CatUnitTestingTests */ = {
+			isa = PBXGroup;
+			children = (
+				92045821263AB0AF00E82F4E /* Mock URLSession Request */,
+				92045820263AB09800E82F4E /* Real HTTP Reqeuest */,
+				920E61042639880B00581F5D /* Info.plist */,
+			);
+			path = CatUnitTestingTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +182,24 @@
 			productReference = 920E60CF26395CC300581F5D /* CatUnitTesting.app */;
 			productType = "com.apple.product-type.application";
 		};
+		920E60FF2639880B00581F5D /* CatUnitTestingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 920E61072639880B00581F5D /* Build configuration list for PBXNativeTarget "CatUnitTestingTests" */;
+			buildPhases = (
+				920E60FC2639880B00581F5D /* Sources */,
+				920E60FD2639880B00581F5D /* Frameworks */,
+				920E60FE2639880B00581F5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				920E61062639880B00581F5D /* PBXTargetDependency */,
+			);
+			name = CatUnitTestingTests;
+			productName = CatUnitTestingTests;
+			productReference = 920E61002639880B00581F5D /* CatUnitTestingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -98,6 +211,11 @@
 				TargetAttributes = {
 					920E60CE26395CC300581F5D = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					920E60FF2639880B00581F5D = {
+						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
+						TestTargetID = 920E60CE26395CC300581F5D;
 					};
 				};
 			};
@@ -115,6 +233,7 @@
 			projectRoot = "";
 			targets = (
 				920E60CE26395CC300581F5D /* CatUnitTesting */,
+				920E60FF2639880B00581F5D /* CatUnitTestingTests */,
 			);
 		};
 /* End PBXProject section */
@@ -126,7 +245,13 @@
 			files = (
 				920E60DF26395CC400581F5D /* LaunchScreen.storyboard in Resources */,
 				920E60DC26395CC400581F5D /* Assets.xcassets in Resources */,
-				920E60DA26395CC300581F5D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		920E60FE2639880B00581F5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +262,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				920E61232639A74F00581F5D /* CatModelMock.swift in Sources */,
+				920E60F42639605C00581F5D /* CatModel.swift in Sources */,
 				920E60D726395CC300581F5D /* ViewController.swift in Sources */,
 				920E60D326395CC300581F5D /* AppDelegate.swift in Sources */,
 				920E60D526395CC300581F5D /* SceneDelegate.swift in Sources */,
+				920E60ED26395F4100581F5D /* Protocol.swift in Sources */,
+				920E60F12639600300581F5D /* NetworkRequest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		920E60FC2639880B00581F5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				920E610F2639885100581F5D /* NetworkRequestTest.swift in Sources */,
+				9204581D263AAEF300E82F4E /* MockURLProtocol.swift in Sources */,
+				92045823263AB0FF00E82F4E /* NetworkRequestWithMockURLSessionTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		920E60D826395CC300581F5D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				920E60D926395CC300581F5D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		920E61062639880B00581F5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 920E60CE26395CC300581F5D /* CatUnitTesting */;
+			targetProxy = 920E61052639880B00581F5D /* PBXContainerItemProxy */;
 		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
 		920E60DD26395CC400581F5D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -319,6 +458,49 @@
 			};
 			name = Release;
 		};
+		920E61082639880B00581F5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79UR55F3F;
+				INFOPLIST_FILE = CatUnitTestingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.niclasjeppsson.CatUnitTestingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatUnitTesting.app/CatUnitTesting";
+			};
+			name = Debug;
+		};
+		920E61092639880B00581F5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79UR55F3F;
+				INFOPLIST_FILE = CatUnitTestingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.niclasjeppsson.CatUnitTestingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatUnitTesting.app/CatUnitTesting";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -336,6 +518,15 @@
 			buildConfigurations = (
 				920E60E426395CC400581F5D /* Debug */,
 				920E60E526395CC400581F5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		920E61072639880B00581F5D /* Build configuration list for PBXNativeTarget "CatUnitTestingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				920E61082639880B00581F5D /* Debug */,
+				920E61092639880B00581F5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
