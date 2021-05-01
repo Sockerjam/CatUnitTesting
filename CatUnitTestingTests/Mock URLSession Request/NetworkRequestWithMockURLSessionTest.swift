@@ -63,7 +63,7 @@ class NetworkRequestWithMockURLSessionTest: XCTestCase {
     self.waitForExpectations(timeout: 01)
   }
   
-  func testNetworkRequest_400Response() throws {
+  func testNetworkRequest_400Response_withBadModelError() throws {
     
     // GIVEN
     
@@ -95,6 +95,46 @@ class NetworkRequestWithMockURLSessionTest: XCTestCase {
         XCTFail("Request succeded but was expected to fail")
       case let .failure(error):
         XCTAssertEqual(error, .badModel)
+      }
+      expect.fulfill()
+      
+    }
+    self.waitForExpectations(timeout: 01)
+  }
+  
+  // Oh look: this test actually fails, highlighting an issue with the implementation of the NetworkRequest -  which ws otherwise going undetected.
+  func testNetworkRequest_400Response_withBadURL() throws {
+    
+    // GIVEN
+    
+    //Setting Up URLSession Using A Mock Protocol
+    let config = URLSessionConfiguration.ephemeral
+    config.protocolClasses = [MockURLProtocol.self]
+    let urlSession = URLSession(configuration: config)
+    let unexpectedErrorData = try encoder.encode("Hi! I am some random error from the server :P")
+    MockURLProtocol.requestHandler = { request in
+      let response = HTTPURLResponse(url: request.url!,
+                                     statusCode: 400,
+                                     httpVersion: "2.0",
+                                     headerFields: nil)!
+      return (response, unexpectedErrorData)
+    }
+    
+    //Injecting Mock URLSession to SUT
+    let sut = NetworkRequest(urlSession: urlSession)
+    
+    let badUrlString = "http://cats.facebook.com/||?!"
+    
+    let expect = expectation(description: "NetworkRequest Response Expectation")
+    
+    // WHEN
+    sut.getItems(url: badUrlString, resultType: [CatModel].self) { result in
+      
+      switch result {
+      case .success:
+        XCTFail("Request succeded but was expected to fail")
+      case let .failure(error):
+        XCTAssertEqual(error, .badUrl)
       }
       expect.fulfill()
       
