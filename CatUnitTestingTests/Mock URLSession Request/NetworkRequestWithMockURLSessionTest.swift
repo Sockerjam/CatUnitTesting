@@ -102,7 +102,7 @@ class NetworkRequestWithMockURLSessionTest: XCTestCase {
     self.waitForExpectations(timeout: 01)
   }
   
-  // Oh look: this test actually fails, highlighting an issue with the implementation of the NetworkRequest -  which ws otherwise going undetected.
+  // Oh look: this test actually fails, highlighting an issue with the implementation of the NetworkRequest -  which was otherwise going undetected.
   func testNetworkRequest_400Response_withBadURL() throws {
     
     // GIVEN

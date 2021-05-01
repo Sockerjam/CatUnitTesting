@@ -19,6 +19,7 @@ class MockURLProtocol: URLProtocol{
     return request
   }
   
+  // Added a proper handler so that now we can also test the unhappy paths (errors and such)
   override func startLoading() {
     guard let handler = MockURLProtocol.requestHandler else {
       
