@@ -21,7 +21,7 @@ class NetworkRequest {
 
 extension NetworkRequest:APICall {
     
-    func getCatFacts<T>(url: String, resultType: [T].Type, completion: @escaping (Result<[T], NetworkError>) -> Void) where T : Decodable, T : Encodable {
+    func getItems<T>(url: String, resultType: [T].Type, completion: @escaping (Result<[T], NetworkError>) -> Void) where T : Decodable, T : Encodable {
         
         guard let url = URL(string: url) else {
             completion(.failure(.noURL))
@@ -50,21 +50,9 @@ extension NetworkRequest:APICall {
                 completion(.failure(.noData))
                 return
             }
-            self.numberOfCatFacts = successData.count
             completion(.success(successData))
         }
         
         dataTask.resume()
     }
-    
-    var numberOfCatFacts: Int {
-        get {
-            return catsTotal
-        }
-        set{
-            catsTotal = newValue
-        }
-    }
-    
-    
 }

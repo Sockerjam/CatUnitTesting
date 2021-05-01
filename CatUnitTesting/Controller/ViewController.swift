@@ -50,12 +50,13 @@ class ViewController: UIViewController {
         setup()
         
         //Networking
-        networkRequest.getCatFacts(url: "https://cat-fact.herokuapp.com/facts", resultType: [CatModel].self) { (result) in
+        networkRequest.getItems(url: "https://cat-fact.herokuapp.com/facts", resultType: [CatModel].self) { (result) in
             
             DispatchQueue.main.async {
                 self.textLabel.text = "Cat Facts: "
                 switch result {
                 case .success(let catModel):
+                  self.numberOfCats.text = "Number of Cat Facts: \(catModel.count)"
                     for catFact in catModel {
                         self.textLabel.text!.append("\n\(catFact.text)")
                     }
@@ -63,8 +64,6 @@ class ViewController: UIViewController {
                     print(networkError)
                     self.textLabel.text = networkError.localizedDescription
                 }
-                
-                self.numberOfCats.text = "Number of Cat Facts: \(self.networkRequest.numberOfCatFacts)"
             }
         }
         
