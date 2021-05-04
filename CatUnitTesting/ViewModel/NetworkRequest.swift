@@ -15,8 +15,6 @@ class NetworkRequest {
     init(urlSession:URLSession = .shared){
         self.urlSession = urlSession
     }
-    
-    private var catsTotal:Int!
 }
 
 extension NetworkRequest:APICall {

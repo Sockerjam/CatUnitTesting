@@ -134,7 +134,7 @@ class NetworkRequestWithMockURLSessionTest: XCTestCase {
       case .success:
         XCTFail("Request succeded but was expected to fail")
       case let .failure(error):
-        XCTAssertEqual(error, .badUrl)
+        XCTAssertEqual(error, .noURL)
       }
       expect.fulfill()
       
