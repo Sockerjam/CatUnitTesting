@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct CatModel:Codable {
-    var text:String
+struct CatModel: Codable, Equatable {
+    var text: String
 }
 
 struct CatFacts:Codable {
-    var text:String
+    var text: String
 }

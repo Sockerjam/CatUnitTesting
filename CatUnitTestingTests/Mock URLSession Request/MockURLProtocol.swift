@@ -7,24 +7,34 @@
 
 import Foundation
 
-class MockURLProtocol:URLProtocol{
-    
-    static var stubResponseData:Data?
-    
-    override class func canInit(with request: URLRequest) -> Bool {
-        return true
+class MockURLProtocol: URLProtocol{
+  
+  static var requestHandler: ((URLRequest) throws -> (HTTPURLResponse, Data) )?
+  
+  override class func canInit(with request: URLRequest) -> Bool {
+    return true
+  }
+  
+  override class func canonicalRequest(for request: URLRequest) -> URLRequest {
+    return request
+  }
+  
+  // Added a proper handler so that now we can also test the unhappy paths (errors and such)
+  override func startLoading() {
+    guard let handler = MockURLProtocol.requestHandler else {
+      
+      return
     }
-    
-    override class func canonicalRequest(for request: URLRequest) -> URLRequest {
-        return request
+    do {
+      let (response, data)  = try handler(request)
+      client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
+      client?.urlProtocol(self, didLoad: data)
+      client?.urlProtocolDidFinishLoading(self)
+    } catch  {
+      client?.urlProtocol(self, didFailWithError: error)
     }
-    
-    override func startLoading() {
-        self.client?.urlProtocol(self, didLoad: MockURLProtocol.stubResponseData ?? Data())
-        
-        self.client?.urlProtocolDidFinishLoading(self)
-    }
-    
-    override func stopLoading() {
-    }
+  }
+  
+  override func stopLoading() {
+  }
 }
