@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct CatModelMock:Codable{
+struct CatModelMock:Codable,Equatable{
     var fact:String
 }

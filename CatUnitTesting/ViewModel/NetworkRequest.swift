@@ -35,6 +35,8 @@ extension NetworkRequest:APICall {
                 return
             }
             
+            print(response.debugDescription)
+            
             var decodedData:[T]?
             do {
                 decodedData = try JSONDecoder().decode(resultType.self, from: data)
