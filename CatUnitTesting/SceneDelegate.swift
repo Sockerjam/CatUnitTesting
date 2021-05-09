@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         
-        let vc = ViewController(catInfoViewModel: NetworkRequest())
+      let vc = ViewController(viewModel: ViewModel(dataProvider: CatsDataProviderImpl(apiService: APIServiceImpl())))
         
         window?.rootViewController = vc
         
