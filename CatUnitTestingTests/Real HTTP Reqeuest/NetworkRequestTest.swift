@@ -8,13 +8,13 @@
 import XCTest
 @testable import CatUnitTesting
 
-class NetworkRequestTest: XCTestCase {
+class APIServiceImplTest: XCTestCase {
   
-  var sut:NetworkRequest!
+  var sut:APIServiceImpl!
   
   override func setUpWithError() throws {
     try super.setUpWithError()
-    sut = NetworkRequest()
+    sut = APIServiceImpl()
   }
   
   override func tearDownWithError() throws {
@@ -22,12 +22,12 @@ class NetworkRequestTest: XCTestCase {
     try super.tearDownWithError()
   }
   
-  func testSuccessfulNetworkRequest(){
+  func testSuccessfulAPIServiceImpl(){
     
     //given
     let url = "https://cat-fact.herokuapp.com/facts"
     let response = "Cats make about 100 different sounds. Dogs make only about 10."
-    let expectation = self.expectation(description: "Successful NetworkRequest Reponse")
+    let expectation = self.expectation(description: "Successful APIServiceImpl Reponse")
     
     //when
     sut.getItems(url: url, resultType: [CatModel].self) { (result) in

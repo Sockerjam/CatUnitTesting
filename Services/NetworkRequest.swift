@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NetworkRequest {
+class APIServiceImpl {
     
     //Used when Mocking URLSession. Otherwise .shared
     private var urlSession:URLSession!
@@ -17,7 +17,7 @@ class NetworkRequest {
     }
 }
 
-extension NetworkRequest:APICall {
+extension APIServiceImpl: APIService {
     
     func getItems<T>(url: String, resultType: [T].Type, completion: @escaping (Result<[T], NetworkError>) -> Void) where T : Decodable, T : Encodable {
         

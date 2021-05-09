@@ -1,5 +1,5 @@
 //
-//  NetworkRequestWithMockURLSessionTest.swift
+//  APIServiceImplWithMockURLSessionTest.swift
 //  CatUnitTestingTests
 //
 //  Created by Niclas Jeppsson on 29/04/2021.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import CatUnitTesting
 
-class NetworkRequestWithMockURLSessionTest: XCTestCase {
+class APIServiceImplWithMockURLSessionTest: XCTestCase {
   
   private var encoder: JSONEncoder!
   
@@ -22,7 +22,7 @@ class NetworkRequestWithMockURLSessionTest: XCTestCase {
     super.tearDown()
   }
   
-  func testNetworkRequest_200Response() throws {
+  func testAPIServiceImpl_200Response() throws {
     //GIVEN
     
     //Setting Up URLSession Using A Mock Protocol
@@ -40,11 +40,11 @@ class NetworkRequestWithMockURLSessionTest: XCTestCase {
     }
     
     //Injecting Mock URLSession to SUT
-    let sut = NetworkRequest(urlSession: urlSession)
+    let sut = APIServiceImpl(urlSession: urlSession)
     
     let url = "https://cat-fact.herokuapp.com/facts"
     
-    let expect = expectation(description: "NetworkRequest Response Expectation")
+    let expect = expectation(description: "APIServiceImpl Response Expectation")
     
     // WHEN
     sut.getItems(url: url, resultType: [CatModel].self) { result in
@@ -63,7 +63,7 @@ class NetworkRequestWithMockURLSessionTest: XCTestCase {
     self.waitForExpectations(timeout: 01)
   }
   
-  func testNetworkRequest_400Response_withBadModelError() throws {
+  func testAPIServiceImpl_400Response_withBadModelError() throws {
     
     // GIVEN
     
@@ -81,11 +81,11 @@ class NetworkRequestWithMockURLSessionTest: XCTestCase {
     }
     
     //Injecting Mock URLSession to SUT
-    let sut = NetworkRequest(urlSession: urlSession)
+    let sut = APIServiceImpl(urlSession: urlSession)
     
     let url = "https://cat-fact.herokuapp.com/facts"
     
-    let expect = expectation(description: "NetworkRequest Response Expectation")
+    let expect = expectation(description: "APIServiceImpl Response Expectation")
     
     // WHEN
     sut.getItems(url: url, resultType: [CatModel].self) { result in
@@ -102,8 +102,8 @@ class NetworkRequestWithMockURLSessionTest: XCTestCase {
     self.waitForExpectations(timeout: 01)
   }
   
-  // Oh look: this test actually fails, highlighting an issue with the implementation of the NetworkRequest -  which was otherwise going undetected.
-  func testNetworkRequest_400Response_withBadURL() throws {
+  // Oh look: this test actually fails, highlighting an issue with the implementation of the APIServiceImpl -  which was otherwise going undetected.
+  func testAPIServiceImpl_400Response_withBadURL() throws {
     
     // GIVEN
     
@@ -121,11 +121,11 @@ class NetworkRequestWithMockURLSessionTest: XCTestCase {
     }
     
     //Injecting Mock URLSession to SUT
-    let sut = NetworkRequest(urlSession: urlSession)
+    let sut = APIServiceImpl(urlSession: urlSession)
     
     let badUrlString = "http://cats.facebook.com/||?!"
     
-    let expect = expectation(description: "NetworkRequest Response Expectation")
+    let expect = expectation(description: "APIServiceImpl Response Expectation")
     
     // WHEN
     sut.getItems(url: badUrlString, resultType: [CatModel].self) { result in
